@@ -1,0 +1,18 @@
+package: snakemake
+
+install_channels:
+  - r
+  - bioconda
+
+platform:
+  - linux-64
+engine:
+#  - python=2
+  - python=3
+envvars:
+
+script:
+  - conda build .
+
+# build_targets:
+#   - conda
