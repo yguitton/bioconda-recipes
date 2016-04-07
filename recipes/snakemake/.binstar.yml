@@ -7,7 +7,7 @@ install_channels:
 platform:
   - linux-64
 engine:
-#  - python=2
+  - python=2
   - python=3
 envvars:
 
