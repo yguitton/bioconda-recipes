@@ -1,0 +1,27 @@
+package:
+  name: info_rna
+  version: 2.1.2
+
+source:
+  fn: 2.1.2.tar.gz
+  url: https://github.com/BackofenLab/INFO-RNA/archive/2.1.2.tar.gz
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - viennarna <=2.1.8
+    - gcc   # [linux]
+    - llvm  # [osx]
+  run:
+    - viennarna <=2.1.8
+
+test:
+  commands:
+    - info-rna "(...)"
+
+about:
+  home: https://github.com/BackofenLab/INFO-RNA
+  license: MIT
+  summary: A Fast Approach to Inverse RNA Folding Satisfying Sequence Constraints
