@@ -8,7 +8,11 @@ after_success:
   - echo "ProtoCI build success."
 
 before_script:
-  - conda install -c psteinberg conda-build=1.20 protoci=0.0.41
+  - mkdir conda_tmp
+  # avoid conflict with conda or conda-build dirs if already there
+  - git clone --branch 1.20.0 https://github.com/conda/conda-build conda_tmp/conda-build
+  - git clone --branch 4.0.5 https://github.com/conda/conda conda_tmp/conda
+  - conda install -c psteinberg protoci=0.0.41
 
 engine:
   - python=2.7
@@ -23,6 +27,8 @@ platform:
   - osx-64
 
 script:
+  # use updated conda
+  - export PYTHONPATH=$PYTHONPATH:./conda_tmp/conda-build:./conda_tmp/conda
   - protoci-difference-build recipes
 
 install_channels:
