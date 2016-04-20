@@ -24,7 +24,7 @@ env:
 
 platform:
   - linux-64
-  - osx-64
+#  - osx-64
 
 script:
   # use updated conda
