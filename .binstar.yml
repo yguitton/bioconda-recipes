@@ -8,12 +8,15 @@ after_success:
   - echo "ProtoCI build success."
 
 before_script:
-  - conda install -c psteinberg protoci
+  - conda install -c psteinberg conda-build protoci
 
 engine:
   - python=2.7
   - python=3.4
   - python=3.5
+
+env:
+  - CONDA_BOOST=1.60 CONDA_NPY=110 CONDA_PERL=5.22.0
 
 platform:
   - linux-64
