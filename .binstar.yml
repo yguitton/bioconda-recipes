@@ -2,7 +2,7 @@ after_failure:
   - echo "ProtoCI build failed!"
 
 after_script:
-  - echo "ProtoCI build was a:$BINSTAR_BUILD_RESULT"
+  - echo "ProtoCI build was a: $BINSTAR_BUILD_RESULT"
 
 after_success:
   - echo "ProtoCI build success."
