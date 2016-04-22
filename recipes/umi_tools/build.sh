@@ -1,4 +1,4 @@
 #!/bin/bash
 
-sed -i 's/install_requires=requires,/#/g' setup.py
+sed -i -e 's/=install_requires,/#/g' -e 's/install_requires#/#/g' setup.py
 ${PYTHON} setup.py install
